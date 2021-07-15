@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  flex-direction: column;
+  color: white;
+  font-family: "Righteous", cursive;
+}
+
+.title {
+  margin: 20px;
+  color: rgb(0, 65, 109);
+}
+
+.subtext {
+  color: red;
+  font-size: 30px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.buttons{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    color: white;
+    padding: 5px 20px;
+    margin: 15px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 0px transparent;
+    cursor: pointer;
+}
+
+.btn-easy{
+    background-color: rgb(41, 187, 5);
+}
+
+.btn-medium{
+    background-color: rgb(235, 140, 15);
+}
+
+.btn-hard{
+    background-color: red;
+}
+
+.board {
+  display: none;
+  padding: 10px;
+  grid-template-columns: repeat(var(--size), 60px);
+  grid-template-rows: repeat(var(--size), 60px);
+  gap: 4px;
+  background-color: rgb(0, 65, 109);
+  border-radius: 9px;
+}
+
+.board > * {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 2px solid rgb(0, 85, 243);
+  user-select: none;
+  border-radius: 7px;
+}
+
+.board > [data-status="hidden"] {
+  background-color: lightskyblue;
+  cursor: pointer;
+}
+
+.board > [data-status="mine"] {
+  background-color: red;
+}
+
+.board > [data-status="number"] {
+  background-color: none;
+}
+
+.board > [data-status="marked"] {
+  background-color: yellow;
+}
+
+@media screen and (max-width : 720px) {
+  .board {
+    display: none;
+    padding: 10px;
+    grid-template-columns: repeat(var(--size), 50px);
+    grid-template-rows: repeat(var(--size), 50px);
+    gap: 4px;
+    background-color: rgb(0, 65, 109);
+    border-radius: 9px;
+  }
+}
+
+@media screen and (max-width : 610px) {
+  .title {
+    margin: 20px;
+    color: rgb(0, 65, 109);
+    font-size: 40px;
+  }
+  .subtext {
+    color: red;
+    font-size: 25px;
+    margin-bottom: 10px;
+    display: none;
+  }
+  .btn{
+    color: white;
+    padding: 5px 20px;
+    margin: 15px;
+    font-size: 29gpx;
+    border-radius: 10px;
+    border: 0px transparent;
+    cursor: pointer;
+  }
+  .board {
+    display: none;
+    padding: 10px;
+    grid-template-columns: repeat(var(--size), 45px);
+    grid-template-rows: repeat(var(--size), 45px);
+    gap: 4px;
+    background-color: rgb(0, 65, 109);
+    border-radius: 9px;
+  }
+  .board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgb(0, 85, 243);
+    user-select: none;
+    border-radius: 7px;
+  }
+}
+@media screen and (max-width : 550px) {
+  .btn{
+    color: white;
+    padding: 5px 20px;
+    margin: 15px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: 0px transparent;
+    cursor: pointer;
+  }
+  .board {
+    display: none;
+    padding: 7px;
+    grid-template-columns: repeat(var(--size), 40px);
+    grid-template-rows: repeat(var(--size), 40px);
+    gap: 3.5px;
+    background-color: rgb(0, 65, 109);
+    border-radius: 9px;
+  }
+  .board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 33px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgb(0, 85, 243);
+    user-select: none;
+    border-radius: 7px;
+  }
+}
+@media screen and (max-width : 480px) {
+  .title {
+    margin: 20px;
+    color: rgb(0, 65, 109);
+    font-size: 35px;
+  }
+  .subtext {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: none;
+  }
+  .btn{
+    color: white;
+    padding: 5px 20px;
+    margin: 15px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: 0px transparent;
+    cursor: pointer;
+  }
+  .board {
+    display: none;
+    padding: 5px;
+    grid-template-columns: repeat(var(--size), 35px);
+    grid-template-rows: repeat(var(--size), 35px);
+    gap: 2px;
+    background-color: rgb(0, 65, 109);
+    border-radius: 9px;
+  }
+  .board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgb(0, 85, 243);
+    user-select: none;
+    border-radius: 7px;
+  }
+}
+@media screen and (max-width : 400px) {
+  .title {
+    margin: 20px;
+    color: rgb(0, 65, 109);
+    font-size: 35px;
+  }
+  .subtext {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: none;
+  }
+  .btn{
+    color: white;
+    padding: 5px 20px;
+    margin: 15px;
+    font-size: 23px;
+    border-radius: 10px;
+    border: 0px transparent;
+    cursor: pointer;
+  }
+  .board {
+    display: none;
+    padding: 5px;
+    grid-template-columns: repeat(var(--size), 33px);
+    grid-template-rows: repeat(var(--size), 33px);
+    gap: 2px;
+    background-color: rgb(0, 65, 109);
+    border-radius: 9px;
+  }
+  .board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 27px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgb(0, 85, 243);
+    user-select: none;
+    border-radius: 7px;
+  }
+}
+
+@media screen and (max-width : 380px) {
+  .title {
+    margin: 20px;
+    color: rgb(0, 65, 109);
+    font-size: 35px;
+  }
+  .subtext {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: none;
+  }
+  .btn{
+    color: white;
+    padding: 5px 20px;
+    margin: 15px;
+    font-size: 23px;
+    border-radius: 10px;
+    border: 0px transparent;
+    cursor: pointer;
+  }
+  .board {
+    display: none;
+    padding: 5px;
+    grid-template-columns: repeat(var(--size), 30px);
+    grid-template-rows: repeat(var(--size), 30px);
+    gap: 2px;
+    background-color: rgb(0, 65, 109);
+    border-radius: 9px;
+  }
+  .board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 23px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgb(0, 85, 243);
+    user-select: none;
+    border-radius: 7px;
+  }
+}
+@media screen and (max-width : 340px) {
+  .title {
+    margin: 20px;
+    color: rgb(0, 65, 109);
+    font-size: 35px;
+  }
+  .subtext {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: none;
+  }
+  .btn{
+    color: white;
+    padding: 5px 20px;
+    margin: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0px transparent;
+    cursor: pointer;
+  }
+  .board {
+    display: none;
+    padding: 4px;
+    grid-template-columns: repeat(var(--size), 28px);
+    grid-template-rows: repeat(var(--size), 28px);
+    gap: 2px;
+    background-color: rgb(0, 65, 109);
+    border-radius: 9px;
+  }
+  .board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgb(0, 85, 243);
+    user-select: none;
+    border-radius: 7px;
+  }
+}
+@media screen and (max-width : 315px) {
+  .title {
+    margin: 20px;
+    color: rgb(0, 65, 109);
+    font-size: 35px;
+  }
+  .subtext {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: none;
+  }
+  .btn{
+    color: white;
+    padding: 5px 20px;
+    margin: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0px transparent;
+    cursor: pointer;
+  }
+  .board {
+    display: none;
+    padding: 3px;
+    grid-template-columns: repeat(var(--size), 25px);
+    grid-template-rows: repeat(var(--size), 25px);
+    gap: 2px;
+    background-color: rgb(0, 65, 109);
+    border-radius: 9px;
+  }
+  .board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgb(0, 85, 243);
+    user-select: none;
+    border-radius: 7px;
+  }
+}
